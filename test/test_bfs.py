@@ -18,15 +18,17 @@ def test_bfs_traversal():
     # Check that all nodes are visited
     assert len(result) == len(graph.graph.nodes()), "Not all nodes are visited"
 
-    # Compare the order of nodes with NetworkX's bfs order
-    expected_order = list(nx.bfs_tree(graph.graph, source=start_node))
-    assert result == expected_order, "BFS traversal order is incorrect"
-
     #compare the amount of nodes and edges with NetworkX's bfs order
     expected_nodes = len(nx.bfs_tree(graph.graph, source=start_node).nodes())
     expected_edges = len(nx.bfs_tree(graph.graph, source=start_node).edges())
     assert len(result) == expected_nodes, "same amount of nodes"
     assert len(result) -1 == expected_edges, "First node has no edge"
+    
+    # Compare the order of nodes with NetworkX's bfs order
+    expected_order = list(nx.bfs_tree(graph.graph, source=start_node))
+    assert result == expected_order, "BFS traversal order is incorrect"
+
+
 
 
 
