@@ -23,10 +23,13 @@ def test_bfs_traversal():
     expected_edges = len(nx.bfs_tree(graph.graph, source=start_node).edges())
     assert len(result) == expected_nodes, "same amount of nodes"
     assert len(result) -1 == expected_edges, "First node has no edge"
+
+    # Compare a shortest path with NetworkX's bfs order
+    end_node = list(graph.graph.nodes())[-1]
+    result = graph.bfs(start_node, end_node)
+    expected_path = nx.shortest_path(graph.graph, source=start_node, target=end_node)
+    assert result == expected_path, "The path is not the shortest"
     
-    # Compare the order of nodes with NetworkX's bfs order
-    expected_order = list(nx.bfs_tree(graph.graph, source=start_node))
-    assert result == expected_order, "BFS traversal order is incorrect"
 
 
 
