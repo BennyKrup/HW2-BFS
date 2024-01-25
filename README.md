@@ -1,3 +1,8 @@
+![BuildStatus](https://github.com/BennyKrup/HW2-BFS/workflows/HW2-BFS/badge.svg?event=push)
+
+# Method
+Shortest path finder using breadth first search (BFS). Starting node as an input is required. If an end node is provided will return the shortest path to the end from start. if no end node is provided will return the BFS traversal of the graph.
+
 # Assignment 2
 Breadth-first search
 
